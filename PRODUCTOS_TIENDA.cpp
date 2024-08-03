@@ -34,5 +34,11 @@ int main() {
         40, 50, 30, 40, 50,
         40, 50, 30, 40, 50
     };
+    const int maxAbarrotes = 100;
+    
+    string carritoProductos[maxAbarrotes];
+    int carritoCantidades[maxAbarrotes];
+    double carritoPrecios[maxAbarrotes];
+    int numAbarrotesEnCarrito = 0;
 return 0;
 }
