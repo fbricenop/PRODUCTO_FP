@@ -40,5 +40,9 @@ int main() {
     int carritoCantidades[maxAbarrotes];
     double carritoPrecios[maxAbarrotes];
     int numAbarrotesEnCarrito = 0;
+    for (int i = 0; i < numAbarrotes; ++i) {
+        cout << i + 1 << ". " << productos[i] << " - $" << precios[i] << " (Stock: " << stock[i] << ")" << endl;
+    }
+    cout << "================================\n";
 return 0;
 }
