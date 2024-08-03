@@ -15,3 +15,8 @@ void mostrarTitulo(const string& titulo) {
     }
     cout << endl;
 }
+int main() {
+    string titulo = "Menu de Productos de la Tienda de Abarrotes:";
+    mostrarTitulo(titulo);
+return 0;
+}
