@@ -24,5 +24,10 @@ int main() {
         "Lentejas", "Fideos", "Yogurt", "Trigo", "Avena",
         "Azucar", "Semola", "Pomarola", "Quinua", "Soya"
     };
+    double precios[numAbarrotes] = {
+        4.50, 3.50, 3.50, 8, 4.50,
+        7.50, 4.50, 5, 3.50, 3.50,
+        4.50, 3.50, 1.80, 10, 4
+    };
 return 0;
 }
