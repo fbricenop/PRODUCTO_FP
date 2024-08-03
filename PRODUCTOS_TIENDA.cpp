@@ -18,5 +18,11 @@ void mostrarTitulo(const string& titulo) {
 int main() {
     string titulo = "Menu de Productos de la Tienda de Abarrotes:";
     mostrarTitulo(titulo);
+    const int numAbarrotes = 15;
+    string productos[numAbarrotes] = {
+        "Arroz", "Harina", "Leche", "Aceite", "Atun",
+        "Lentejas", "Fideos", "Yogurt", "Trigo", "Avena",
+        "Azucar", "Semola", "Pomarola", "Quinua", "Soya"
+    };
 return 0;
 }
