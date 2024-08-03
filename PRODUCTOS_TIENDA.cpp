@@ -44,5 +44,34 @@ int main() {
         cout << i + 1 << ". " << productos[i] << " - $" << precios[i] << " (Stock: " << stock[i] << ")" << endl;
     }
     cout << "================================\n";
+     int seleccion;
+    while (true) {
+        cout << "Seleccione el numero del producto que ha comprado (0 para cerrar la compra): ";
+        cin >> seleccion;
+
+        if (seleccion == 0) {
+            break;
+        }
+
+        if (seleccion > 0 && seleccion <= numAbarrotes) {
+            int cantidad;
+            cout << "Ha seleccionado: " << productos[seleccion - 1] << endl;
+            cout << "Ingrese la cantidad comprada: ";
+            cin >> cantidad;
+
+            if (cantidad <= stock[seleccion - 1]) {
+                carritoProductos[numAbarrotesEnCarrito] = productos[seleccion - 1];
+                carritoCantidades[numAbarrotesEnCarrito] = cantidad;
+                carritoPrecios[numAbarrotesEnCarrito] = precios[seleccion - 1];
+                numAbarrotesEnCarrito++;
+
+                stock[seleccion - 1] -= cantidad;
+            } else {
+                cout << "Lo siento, no hay suficiente stock para ese producto. Solo quedan " << stock[seleccion - 1] << " unidades." << endl;
+            }
+        } else {
+            cout << "Esa opcion es invalida. Por favor, intente de nuevo." << endl;
+        }
+    }
 return 0;
 }
