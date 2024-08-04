@@ -46,7 +46,7 @@ int main() {
     cout << "================================\n";
      int seleccion;
     while (true) {
-        cout << "Seleccione el numero del producto que ha comprado (0 para cerrar la compra): ";
+        cout << "Seleccione el numero del producto que ha comprado (0 para terminar la compra): ";
         cin >> seleccion;
 
         if (seleccion == 0) {
@@ -73,5 +73,15 @@ int main() {
             cout << "Esa opcion es invalida. Por favor, intente de nuevo." << endl;
         }
     }
+    double precioTotal = 0;
+    cout << "\nBOLETA DE TODA LA COMPRA:\n";
+    cout << "=========================\n";
+    for (int i = 0; i < numAbarrotesEnCarrito; ++i) {
+        double subtotal = carritoCantidades[i] * carritoPrecios[i];
+        cout << carritoProductos[i] << " x" << carritoCantidades[i] << " - $" << subtotal << endl;
+        precioTotal += subtotal;
+    }
+    cout << "======================\n";
+    cout << "Precio Total: $" << precioTotal << endl; 
 return 0;
 }
