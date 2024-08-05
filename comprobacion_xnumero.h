@@ -12,9 +12,10 @@ void numaleatorio(int a){
         if(intento==s){
             cout<<"ULTIMO CHEKEO COMPLETADO"<<endl;
             i=3;
-            }else if(i==2){
-                cout<<"INTENTOS ACABADOS"<<endl;
-                //regresar a la interfaz de usario
-            }
+        }else if(i==2){
+            cout<<"INTENTOS ACABADOS"<<endl;
+            break;
+            //regresar a la interfaz de usario
         }
+    }
 }
