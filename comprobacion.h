@@ -1,5 +1,6 @@
 #include "libreriascomunes.h"
 #include "comprobacion_xnumero.h"
+#include "administrador.h"
 using namespace std;
 
 int comprobacion_administrador(int a){
@@ -14,7 +15,7 @@ int comprobacion_administrador(int a){
             if(intentos==3){
                 numaleatorio(a);
                 if(numaleatorio(a)==3){
-                    //llama a administrador.h
+                    admin();        //llama a administrador.h
                 }
             }else{
                 break;
