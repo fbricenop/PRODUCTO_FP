@@ -13,6 +13,9 @@ int comprobacion_administrador(int a){
             intentos=3;
             if(intentos==3){
                 numaleatorio(a);
+                if(numaleatorio(a)==3){
+                    //llama a administrador.h
+                }
             }else{
                 break;
                 //regrese a la interfaz de usuario
