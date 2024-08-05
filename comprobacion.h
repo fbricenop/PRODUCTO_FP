@@ -2,7 +2,7 @@
 #include "comprobacion_xnumero.h"
 using namespace std;
 
-void comprobacion_administrador(int a){
+int comprobacion_administrador(int a){
     string contraseña ="my_0nline_shop",contra;
     int intentos;
     do{
@@ -11,9 +11,15 @@ void comprobacion_administrador(int a){
         if(contra==contraseña){
             cout<<"VERIFICACION EXITOSA"<<endl;
             intentos=3;
-            numaleatorio(a);
+            if(intentos==3){
+                numaleatorio(a);
+            }else{
+                break;
+                //regrese a la interfaz de usuario
+            }
+            
             //funcion de generar nuemeros aleatorios para comprobar que no sea un robot (?
-            break;
+            //return
             //llama a la interfaz del administrador
             
         }else{
