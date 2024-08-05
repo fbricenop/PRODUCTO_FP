@@ -1,12 +1,13 @@
 #include "libreriascomunes.h"
 #include "comprobacion.h"
 #include "usuario.h"
+
 //lamada a archivos .h
 //#include "comprobacion.h";
 using namespace std;
 int main(){
     srand(time(0));
-    int categoria,opcion_administrador;
+    int categoria,opcion_administrador,n;
     g();
     
     /*
@@ -23,6 +24,15 @@ int main(){
             cin>>opcion_administrador;
             switch(opcion_administrador){
                 case 1:{
+                    cout<<"DESEA LA CANTIDAD DE ARTICULOS QUE DESEA AÑADIR: ";
+                    cin>>n;
+                    struct inventario{
+                        int precio;
+                        string producto;
+                    }productos[n];
+                    for(int i=0;i<n;i++){
+                        cin>>productos[i].producto;
+                    }
                     //array de los productos 
                     break;
    
