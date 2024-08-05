@@ -7,17 +7,17 @@
 using namespace std;
 int main(){
     srand(time(0));
-    int categoria,opcion_administrador,n;
+    int categoria,n;
     g();
-    
-    /*
+    /*/
     interfaz de usuario
     */
     //UNA VEZ TERMINE EL BUCLE DEL USUARIO AL PRESIONAR "CUENTA DIFERNTE".
     cout<<endl<<"__ESCRIBA {1} SI ES ADMINISTRADOR O {0} PARA SALIR__";//tambien puede ser 0 para volver a interfz usuario;
     cin>>categoria;
-    comprobacion_administrador(categoria);
-    //int comprobacion_administrador(int categoria);
-
+    if(categoria==1){
+        comprobacion_administrador(categoria);
+    }
+   
     return 0;
-}  
+    }
