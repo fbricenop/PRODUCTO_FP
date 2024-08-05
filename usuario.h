@@ -7,14 +7,14 @@ void g(){
     for(int i=0; i<longitud+2; i++){
         cout<<"*";
     }
-    cout<<endl<<"*\t"<<saludo<<"  *"<<endl;
+    cout<<endl<<"*  "<<saludo<<"  *"<<endl;
     cout<<"*"<<catal<<"*"<<endl;
     for (int i=0;i<longitud+2;i++){
         cout<<"*";
     }
-    string tienda_productos[15]{
-        "Arroz", "Harina", "Leche", "Aceite", "Atun",
-        "Lentejas", "Fideos", "Yogurt", "Trigo", "Avena",
-        "Azucar", "Semola", "Pomarola", "Quinua", "Soya"
+    struct anaqueles{
+        vector <string> tienda_productos={"Arroz", "Harina", "Leche", "Aceite", "Atun","Lentejas", "Fideos", "Yogurt", "Trigo", "Avena","Azucar", "Semola", "Pomarola", "Quinua", "Soya"};
+        double preciosxproducto[15]={};
     };
+      
 }
