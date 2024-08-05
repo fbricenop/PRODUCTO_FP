@@ -15,37 +15,57 @@ void g(){
         cout<<"*";
     }
     cout<<endl;
+    struct buycar{
+        string nombre_producto;
+        int cantidad;
+
+    };
     struct producto{
         string nombre;
+        string medidas;
         int precio;
         int cantidad;
-    };
-
+    }anaquele;
+    vector <buycar> carrocompras;
     vector <producto> anaqueles={
-        {"1)Arroz (1KG)",13,60},{"2)Harina(500 g)",2,50}, {"3)Leche (6 pack )",14,100}, {"4)Aceite (1L)",11,70}, 
-        {"5)Atun (x3)",9,120},{"6)Lentejas (1KG)",7,60}, {"7)Fideos (1KG)",4,70}, {"8)Yogurt (1KG)",8,60}, 
-        {"9)Trigo (1KG)",10,80},{"10)Avena (500 g)",5,60},{"11)Azucar (1KG)",9,30}, {"12)Semola",5,50}, 
-        {"13)Pomarola",5,80},{"14)Quinua",4,30}, {"15)Soya",5,60}
+        {"Arroz","(1KG)",13,60},{"Harina","(500 g)",2,50}, {"Leche", "(6 pack )",14,100}, {"Aceite", "(1L)",11,70}, 
+        {"Atun", "(x3)",9,120},{"Lentejas", "(1KG)",7,60}, {"Fideos", "(1KG)",4,70}, {"Yogurt" ,"(1KG)",8,60}, 
+        {"Trigo", "(1KG)",10,80},{"Avena", "(500 g)",5,60},{"Azucar", "(1KG)",9,30}, {"Semola","",5,50}, 
+        {"Pomarola","80g",5,80},{"Quinua","",4,30}, {"15)Soya","",5,60}
         };
   
     for (size_t i=0; i<anaqueles.size()-5; i++){
         cout<<anaqueles[i].nombre<<"\t"<<anaqueles[i].precio<<" SOLES "<<"\t"<<anaqueles[i].cantidad<<" EN STOCK"<<endl;
     }     
-    cout<<"SELECCIONE UNA OPCION: \n 1)AÑADIR AL CARRITO\t2)ELIMINAR DEL CARRITO\t3)SALIR DE LA TIENDA";
-    cin>>opcion_usario;
-    switch (opcion_usario){
-        int numero,cantidad;
-        case 1:{
-            cout<<"SELECCIONA EL PRODUCTO QUE DESEAS AÑADIR: ";
-            cin>>numero;
-            do{
-                if(numero==0 || numero<0 || numero>anaqueles.size()){
-                    cout<<"INGRESE OPCIONES VALIDAS";
+    do{
+        cout<<"SELECCIONE UNA OPCION: \n 1)AÑADIR AL CARRITO\t2)ELIMINAR DEL CARRITO\t3)SALIR DE LA TIENDA"<<endl;
+        cin>>opcion_usario;
+        cin.ignore();
+        string nameproducto;
+        switch (opcion_usario){
+            case 1:{
+                cout<<"SELECCIONA EL PRODUCTO QUE DESEAS AÑADIR (NOMBRE EXACTO): ";
+                getline(cin,nameproducto);
+                for(size_t i=0;i<anaqueles.size();i++){
+                    if(nameproducto==anaqueles[i].nombre){
+                        int cantidad;
+                        cout<<"INGRESA LA CANTIDAD"<<endl;
+                        cin>>cantidad;
+                        cin.ignore();
+                        if(cantidad>anaqueles[i].cantidad){
+                            cout<<"STOCK INSUFICIENTE POR: "<<cantidad-anaqueles[i].cantidad<<endl;
+                        }else{
+                            for (size_t j=0;j<carrocompras.size();j++){
+                                if(carrocompras[j].nombre_producto==nameproducto){
+                                    carrocompras[i].cantidad+= cantidad;
+                                }
+                            }
+                        }
+                        anaqueles[i].cantidad-=cantidad;
+                        cout<<"AÑADIDO EXITOSAMENTE AL CARRITO"<<endl;
+                    }
                 }
-
-            }while()
-            
-            
+            }
         }
-    }
+    }while(opcion_usario!=3);
 }

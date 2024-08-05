@@ -1,5 +1,5 @@
 #include "libreriascomunes.h"
-#include <usuario.h>
+//#include "usuario.h"
 using namespace std;
 void admin(){
    int salir;
