@@ -4,7 +4,7 @@ using namespace std;
 
 int comprobacion_administrador(int a){
     string contraseña ="my_0nline_shop",contra;
-    int intentos;
+    int intentos=0;
     do{
         cout<<"INGRESE LA CONTRASEÑA DE LA CUENTA DE ADMINISTRADOR: ";
         cin>>contra;
@@ -23,7 +23,7 @@ int comprobacion_administrador(int a){
             //llama a la interfaz del administrador
             
         }else{
-            cout<<"NO COINCIDE. ";
+            cout<<"NO COINCIDE. "<<endl;
             intentos++;
         }
     }while(intentos<3);
