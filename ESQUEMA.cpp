@@ -18,28 +18,6 @@ int main(){
     cin>>categoria;
     comprobacion_administrador(categoria);
     //int comprobacion_administrador(int categoria);
-    switch(categoria){
-        case 1:{
-            cout<<"REALIZA LA ACCION QUE DESEA HACER: "<<endl<<"1)AGREGAR PRODUCTOS \n2)PRECIO DE LOS PRODUCTOS\n3)QUITAR PRODUCTOS \n4)VER INVENTARIO"<<endl;
-            cin>>opcion_administrador;
-            switch(opcion_administrador){
-                case 1:{
-                    cout<<"DESEA LA CANTIDAD DE ARTICULOS QUE DESEA AÑADIR: ";
-                    cin>>n;
-                    struct inventario{
-                        int precio;
-                        string producto;
-                    }productos[n];
-                    for(int i=0;i<n;i++){
-                        cin>>productos[i].producto;
-                    }
-                    //array de los productos 
-                    break;
-   
-                }
-            }
-            break;
-        }
+
     return 0;
-    }
 }  
