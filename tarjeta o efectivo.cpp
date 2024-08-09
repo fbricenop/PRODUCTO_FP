@@ -58,17 +58,17 @@ bool inicio(double& totalcompra){//gestiona el proceso de autentificacion, si es
         cout << "El usuario no existe. Por favor, registrese."<<endl;
         return false; // no se pudo iniciar sesion 
     }
-    cout << "Ingrese su contraseña (DNI): ";cin >> contrasena;
+    cout << "Ingrese su clave: ";cin >> contrasena;
     // Verificar contraseña
     if (contrasenas[usuarioh] == contrasena) {
         cout << "Inicio de sesión exitoso.\n";
-        return true; // Indicar que el inicio de sesion fue exitoso
+        return true; // para que diga que si inicio correctamente
     } else {
         cout << "Contraseña incorrecta. Intente nuevamente.\n";
         return false; // si el inicio de sesion fallo
     }
 }
-void registrocuenta(double& totalCompra) {
+void registrocuenta(double& totalcompra) {//en caso exceda el numero de usuarios
     string nombre, contrasena;
     if (numusuario >= maxusuario) {
         cout << "Nose pueden registrar mas"<<endl;
@@ -97,17 +97,17 @@ bool veriregistro(const string& nombre, int& usuarioh) {//el & sirve para que lo
     }
     return false;
 }
-double aplicardescuento(double totalCompra) {
+double aplicardescuento(double totalcompra) {//aplica el descuento del 10%
     return totalCompra * 0.9;
 }
-void realizarpago(double totalCompra) {
-    cout<<"Total a pagar: $" << totalCompra << "endl";
-    cout<<"Gracias por su compra."<<endl;
+void realizarpago(double totalcompra){
+    cout<<"Total a pagar: $"<<totalcompra<<"endl";
+    cout<<"Gracias por la compra"<<endl;
 }
-void mostrarbeneficios() {
+void mostrarbeneficios(){
     cout<<"Ahora que eres miembro disfrutas de 10% en todas tus compras"<<endl;
 }
-void mostrarmenuderegis(double& totalCompra) {
+void mostrarmenuderegis(double& totalcompra) {
     int eleccion;
     do{
         cout<<"Menu: "<<endl;
