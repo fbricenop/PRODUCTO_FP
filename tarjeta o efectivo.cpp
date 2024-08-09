@@ -98,7 +98,7 @@ bool veriregistro(const string& nombre, int& usuarioh) {//el & sirve para que lo
     return false;
 }
 double aplicardescuento(double totalcompra) {//aplica el descuento del 10%
-    return totalCompra * 0.9;
+    return totalcompra * 0.9;
 }
 void realizarpago(double totalcompra){
     cout<<"Total a pagar: $"<<totalcompra<<"endl";
@@ -117,7 +117,7 @@ void mostrarmenuderegis(double& totalcompra) {
         if(eleccion==1) {
             mostrarbeneficios();
         } else if(eleccion==2) {
-            totalCompra=aplicardescuento(totalcompra);
+            totalcompra=aplicardescuento(totalcompra);
             realizarpago(totalcompra);
         } else{
             cout<<"opcion incorrecta."<<endl;
