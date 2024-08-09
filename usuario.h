@@ -86,11 +86,11 @@ void g(){
             case 3:{
                 double preciTotal =0;
                 string mensaje_boleta= "BOLETA DE COMPRA";
-                for(int i= 0; mensaje_boleta.length();i++){
+                for(int i= 0; i<mensaje_boleta.length();i++){
                     cout<<"=";
                 }
                 cout<<endl<<mensaje_boleta<<endl;
-                for(int i=0; mensaje_boleta.length();i++){
+                for(int i=0; i< mensaje_boleta.length();i++){
                     cout<<"=";
                 }
                 cout<<endl;

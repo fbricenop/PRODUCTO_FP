@@ -18,6 +18,5 @@ int main(){
     if(categoria==1){
         comprobacion_administrador(categoria);
     }
-   
     return 0;
     }
