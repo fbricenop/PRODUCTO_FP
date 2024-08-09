@@ -1,4 +1,4 @@
-#include <iostream>//si te preguntas el double& trabajara con la variable original,pero permitiendo modificaciones
+#include <iostream>//si te preguntas el & trabajara con la variable original,pero permitiendo modificaciones
 #include <string>
 using namespace std; 
 const int maxusuario = 100;//maximos usuarios que se pueden registrar
@@ -114,13 +114,13 @@ void mostrarmenuderegis(double& totalcompra) {
         cout<<"1. Conocer sobre las promociones"<<endl;
         cout<<"2. Pagar aplicando un 10% de descuento"<<endl;
         cin>>eleccion;
-        if(eleccion == 1) {
+        if(eleccion==1) {
             mostrarbeneficios();
-        } else if(eleccion == 2) {
-            totalCompra = aplicardescuento(totalCompra);
+        } else if(eleccion==2) {
+            totalCompra=aplicardescuento(totalCompra);
             realizarpago(totalCompra);
         } else{
             cout<<"opcion incorrecta."<<endl;
         }
-    } while(eleccion != 2);
+    } while(eleccion !=2);
 }
