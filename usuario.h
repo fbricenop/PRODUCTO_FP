@@ -47,25 +47,45 @@ void g(){
                 cout<<"SELECCIONA EL PRODUCTO QUE DESEAS AÑADIR (NOMBRE EXACTO): ";
                 getline(cin,nameproducto);
                 for(size_t i=0;i<anaqueles.size();i++){
-                    if(nameproducto==anaqueles[i].nombre){
+                    if(nameproducto==anaqueles[i].nombre){ //verficia si el nombre dado esta dentro del registo-arreglo en el apratado .nombre
                         int cantidad;
                         cout<<"INGRESA LA CANTIDAD"<<endl;
                         cin>>cantidad;
                         cin.ignore();
-                        if(cantidad>anaqueles[i].cantidad){
+                        if(cantidad>anaqueles[i].cantidad){ //verifica si la cantidad pedida del producto es mayor a la que esta guardada ene le registro-arreglo en el apartado .cantidad
                             cout<<"STOCK INSUFICIENTE POR: "<<cantidad-anaqueles[i].cantidad<<endl;
-                        }else{
+                        }else{// en caso sea V que la cantidad pedida del es menor a la que hay en inventario, entonces se actualiza el registro-vector "buycar" 
                             for (size_t j=0;j<carrocompras.size();j++){
                                 if(carrocompras[j].nombre_producto==nameproducto){
-                                    carrocompras[i].cantidad+= cantidad;
+                                    carrocompras[i].cantidad+= cantidad;//actualizacion de la cantidad de ese prodcuto en el carrito de compras 
                                 }
                             }
+                             anaqueles[i].cantidad-=cantidad;
+                            cout<<"AÑADIDO EXITOSAMENTE AL CARRITO"<<endl;
                         }
-                        anaqueles[i].cantidad-=cantidad;
-                        cout<<"AÑADIDO EXITOSAMENTE AL CARRITO"<<endl;
+                       
                     }
                 }
+                break;
             }
-        }
+            case 2:{
+                cout<<"ESCRIBA EL NOMBRE DEL PRODUCTO QUE DESEA ELIMINAR DE SU CARRITO";
+                for(size_t i=0;i<carrocompras.size();i++){
+                    cout<<carrocompras[i].nombre_producto<<": "<<carrocompras[i].cantidad; //mostrar los elementos en el registro-vector carro de compras
+                }
+                getline(cin,nameproducto);
+                for(size_t i=0;i<carrocompras.size();i++){
+                    if(nameproducto==carrocompras[i].nombre_producto){
+                        
+                    }
+                }
+                break;
+            }
+            case 3:{
+                //mostrar la boleta;
+                break;
+
+            }
+            }
     }while(opcion_usario!=3);
 }
