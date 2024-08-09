@@ -39,7 +39,7 @@ void metododepago(double totalcompra) {
                 entrar=inicio(totalcompra);
             } else if(eleccion==2) {
                 registrocuenta(totalcompra);
-                entrar=true;// despues de registrar inicia sesion inmediatamente
+                entrar=false;// despues de registrar no inicia sesion inmediatamente
             } else{
                 cout<<"Opcion invalida."<<endl;
             }
@@ -71,16 +71,14 @@ bool inicio(double& totalcompra){//gestiona el proceso de autentificacion, si es
 void registrocuenta(double& totalCompra) {
     string nombre, contrasena;
     if (numusuario >= maxusuario) {
-        cout << "Nose pueden registrar mas\n";
+        cout << "Nose pueden registrar mas"<<endl;
         return;
     }
-    cout << "Ingrese su nombre (usuario): ";
-    cin >> nombre;
-
+    cout<<"Ingrese su nombre (usuario): ";cin >> nombre;
     // Verificar si el usuario ya está registrado
     int usuarioh;
     if (veriregistro(nombre, usuarioh)) {
-        cout << "El usuario ya esta registrado."<<endl;
+        cout<<"El usuario ya esta registrado."<<endl;
         return;
     }
     cout<<"Ingrese su contraseña : ";cin >> contrasena;
@@ -88,7 +86,7 @@ void registrocuenta(double& totalCompra) {
     nombres[numusuario] = nombre;
     contrasenas[numusuario] = contrasena;
     numusuario++;
-    cout << "Cuenta registrada exitosamente."<<endl;
+    cout<<"Cuenta registrada exitosamente."<<endl;
 }
 bool veriregistro(const string& nombre, int& usuarioh) {//el & sirve para que los use de referencia y recibe cambios
     for(int i=0;i<numusuario;i++){
@@ -103,26 +101,26 @@ double aplicardescuento(double totalCompra) {
     return totalCompra * 0.9;
 }
 void realizarpago(double totalCompra) {
-    cout << "Total a pagar: $" << totalCompra << "\n";
-    cout << "Gracias por su compra.\n";
+    cout<<"Total a pagar: $" << totalCompra << "endl";
+    cout<<"Gracias por su compra."<<endl;
 }
 void mostrarbeneficios() {
-    cout << "Como miembro, disfrutas de un 10% de descuento en todas tus compras usando la tarjeta de la tienda.\n";
+    cout<<"Ahora que eres miembro disfrutas de 10% en todas tus compras"<<endl;
 }
 void mostrarmenuderegis(double& totalCompra) {
     int eleccion;
-    do {
-        cout << "Menu: "<<endl;
-        cout << "1. Conocer sobre las promociones"<<endl;
-        cout << "2. Pagar aplicando un 10% de descuento"<<endl;
-        cin >> eleccion;
-        if (eleccion == 1) {
+    do{
+        cout<<"Menu: "<<endl;
+        cout<<"1. Conocer sobre las promociones"<<endl;
+        cout<<"2. Pagar aplicando un 10% de descuento"<<endl;
+        cin>>eleccion;
+        if(eleccion == 1) {
             mostrarbeneficios();
-        } else if (eleccion == 2) {
+        } else if(eleccion == 2) {
             totalCompra = aplicardescuento(totalCompra);
             realizarpago(totalCompra);
-        } else {
-            cout << "opcion incorrecta."<<endl;
+        } else{
+            cout<<"opcion incorrecta."<<endl;
         }
-    } while (eleccion != 2);
+    } while(eleccion != 2);
 }
