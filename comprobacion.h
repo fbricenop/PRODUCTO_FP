@@ -1,6 +1,7 @@
 #include "libreriascomunes.h"
 #include "comprobacion_xnumero.h"
 #include "administrador.h"
+//#include "usuario.h"
 using namespace std;
 
 int comprobacion_administrador(int a){
@@ -19,6 +20,7 @@ int comprobacion_administrador(int a){
                 }
             }else{
                 break;
+                //g();
                 //regrese a la interfaz de usuario
             }
             
