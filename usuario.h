@@ -1,6 +1,7 @@
 #include "libreriascomunes.h"
 using namespace std;
 void g(){
+    int preciototal=0;
     string saludo="   HOLA USUARIO";
     string catal="CATALOGO DE PRODUCTOS";
     int longitud =catal.length(),opcion_usario;
@@ -18,6 +19,7 @@ void g(){
     struct buycar{
         string nombre_producto;
         int cantidad;
+        int precio;
 
     };
     struct producto{
@@ -76,15 +78,29 @@ void g(){
                 getline(cin,nameproducto);
                 for(size_t i=0;i<carrocompras.size();i++){
                     if(nameproducto==carrocompras[i].nombre_producto){
-                        
+                        //borrar el elemento del vector
                     }
                 }
                 break;
             }
             case 3:{
-                //mostrar la boleta;
+                double preciTotal =0;
+                string mensaje_boleta= "BOLETA DE COMPRA";
+                for(int i= 0; mensaje_boleta.length();i++){
+                    cout<<"=";
+                }
+                cout<<endl<<mensaje_boleta<<endl;
+                for(int i=0; mensaje_boleta.length();i++){
+                    cout<<"=";
+                }
+                cout<<endl;
+                for(size_t i=0;i<carrocompras.size();i++){
+                    double subtotal =carrocompras[i].cantidad * carrocompras[i].precio;
+                    cout<<carrocompras[i].nombre_producto<< " x"<<carrocompras[i].cantidad;
+                    preciototal+=subtotal; 
+                }
+                cout<<"PRECIO TOTAL EN SOLES: "<< preciototal<<endl;
                 break;
-
             }
             }
     }while(opcion_usario!=3);
