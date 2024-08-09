@@ -117,8 +117,8 @@ void mostrarmenuderegis(double& totalcompra) {
         if(eleccion==1) {
             mostrarbeneficios();
         } else if(eleccion==2) {
-            totalCompra=aplicardescuento(totalCompra);
-            realizarpago(totalCompra);
+            totalCompra=aplicardescuento(totalcompra);
+            realizarpago(totalcompra);
         } else{
             cout<<"opcion incorrecta."<<endl;
         }
