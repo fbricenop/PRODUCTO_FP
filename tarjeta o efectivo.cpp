@@ -61,10 +61,10 @@ bool inicio(double& totalcompra){//gestiona el proceso de autentificacion, si es
     cout << "Ingrese su clave: ";cin >> contrasena;
     // Verificar contraseña
     if (contrasenas[usuarioh] == contrasena) {
-        cout << "Inicio de sesión exitoso.\n";
+        cout << "Inicio de sesion exitoso.\n";
         return true; // para que diga que si inicio correctamente
     } else {
-        cout << "Contraseña incorrecta. Intente nuevamente.\n";
+        cout << "Clave incorrecta. Intente nuevamente.\n";
         return false; // si el inicio de sesion fallo
     }
 }
@@ -81,7 +81,7 @@ void registrocuenta(double& totalcompra) {//en caso exceda el numero de usuarios
         cout<<"El usuario ya esta registrado."<<endl;
         return;
     }
-    cout<<"Ingrese su contraseña : ";cin >> contrasena;
+    cout<<"Ingrese su clave : ";cin >> contrasena;
     // Guardar el usuario y contraseña
     nombres[numusuario] = nombre;
     contrasenas[numusuario] = contrasena;
