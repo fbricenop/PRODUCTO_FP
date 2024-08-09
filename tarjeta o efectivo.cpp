@@ -51,88 +51,71 @@ void metododepago(double totalcompra) {
 }
 bool inicio(double& totalcompra){//gestiona el proceso de autentificacion, si esta registrado o no 
     string nombre, contrasena;
-    int usuarioh=-1;
+    int usuarioh=-1;//se pone -1 porque no se encontro una lista de usuarios
     cout<<"Ingrese su nombre (usuario): ";cin>>nombre;
-
     // Verificar si el usuario esta registrado
     if (!veriregistro(nombre, usuarioh)) {
         cout << "El usuario no existe. Por favor, registrese."<<endl;
         return false; // no se pudo iniciar sesion 
     }
-
-    cout << "Ingrese su contraseña (DNI): ";
-    cin >> contrasena;
-
+    cout << "Ingrese su contraseña (DNI): ";cin >> contrasena;
     // Verificar contraseña
     if (contrasenas[usuarioh] == contrasena) {
         cout << "Inicio de sesión exitoso.\n";
-        return true; // Indicar que el inicio de sesión fue exitoso
+        return true; // Indicar que el inicio de sesion fue exitoso
     } else {
         cout << "Contraseña incorrecta. Intente nuevamente.\n";
-        return false; // Indicar que el inicio de sesión falló
+        return false; // si el inicio de sesion fallo
     }
 }
-
 void registrocuenta(double& totalCompra) {
     string nombre, contrasena;
-
     if (numusuario >= maxusuario) {
-        cout << "No se pueden registrar más usuarios.\n";
+        cout << "Nose pueden registrar mas\n";
         return;
     }
-
     cout << "Ingrese su nombre (usuario): ";
     cin >> nombre;
 
     // Verificar si el usuario ya está registrado
     int usuarioh;
     if (veriregistro(nombre, usuarioh)) {
-        cout << "Este usuario ya está registrado. Intente iniciar sesión.\n";
+        cout << "El usuario ya esta registrado."<<endl;
         return;
     }
-
-    cout << "Ingrese su contraseña (DNI): ";
-    cin >> contrasena;
-
-    // Guardar usuario y contraseña
+    cout<<"Ingrese su contraseña : ";cin >> contrasena;
+    // Guardar el usuario y contraseña
     nombres[numusuario] = nombre;
     contrasenas[numusuario] = contrasena;
     numusuario++;
-
-    cout << "Cuenta registrada exitosamente.\n";
+    cout << "Cuenta registrada exitosamente."<<endl;
 }
-
-bool veriregistro(const string& nombre, int& usuarioh) {
-    for (int i = 0; i < numusuario; i++) {
-        if (nombres[i] == nombre) {
-            usuarioh = i;
+bool veriregistro(const string& nombre, int& usuarioh) {//el & sirve para que los use de referencia y recibe cambios
+    for(int i=0;i<numusuario;i++){
+        if(nombres[i]==nombre){
+            usuarioh=i;
             return true;
         }
     }
     return false;
 }
-
 double aplicardescuento(double totalCompra) {
     return totalCompra * 0.9;
 }
-
 void realizarpago(double totalCompra) {
     cout << "Total a pagar: $" << totalCompra << "\n";
     cout << "Gracias por su compra.\n";
 }
-
 void mostrarbeneficios() {
     cout << "Como miembro, disfrutas de un 10% de descuento en todas tus compras usando la tarjeta de la tienda.\n";
 }
-
 void mostrarmenuderegis(double& totalCompra) {
     int eleccion;
     do {
-        cout << "Menú:\n";
-        cout << "1. Conocer sobre las promociones\n";
-        cout << "2. Pagar aplicando un 10% de descuento\n";
+        cout << "Menu: "<<endl;
+        cout << "1. Conocer sobre las promociones"<<endl;
+        cout << "2. Pagar aplicando un 10% de descuento"<<endl;
         cin >> eleccion;
-
         if (eleccion == 1) {
             mostrarbeneficios();
         } else if (eleccion == 2) {
