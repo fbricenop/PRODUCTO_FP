@@ -1,5 +1,5 @@
 #include <iostream>
-#include "funciones.h"
+#include "funtarjetaoefec.h"
 using namespace std;
 bool inicio(double& totalcompra) {
     string nombre, contrasena;
